@@ -7,7 +7,7 @@ on:                         # Trigger
 
 jobs:
   build:
-    runs-on: self-hosted  # GitHub-hosted runner (VM)
+    runs-on: ubuntu-22.04  # GitHub-hosted runner (VM)
 
     steps:
       - name: Checkout code
