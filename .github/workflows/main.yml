@@ -7,7 +7,7 @@ on:                         # Trigger
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # GitHub-hosted runner (VM)
+    runs-on: self-hosted  # GitHub-hosted runner (VM)
 
     steps:
       - name: Checkout code
@@ -29,4 +29,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: mahijs/mass-image:latest
+          tags: mahijs/dell-app:latest
