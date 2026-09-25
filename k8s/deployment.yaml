@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deploy-mass
+  app: massmutual
 spec:
   template:
     metadata:
-      type: mass
+      app: massmutual
     spec:
       containers:
       - name: app
@@ -15,4 +16,4 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      type: mass
+      app: massmutual
