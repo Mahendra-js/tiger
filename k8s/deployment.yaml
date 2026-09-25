@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-mass
-  app: massmutual
+  name: nginx-deployment
+  labels:
+    app: nginx
 spec:
-  template:
-    metadata:
-      app: massmutual
-    spec:
-      containers:
-      - name: app
-        image: mahijs/dell-app:latest
-        ports:
-        - containerPort: 80
   replicas: 3
   selector:
     matchLabels:
-      app: massmutual
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
