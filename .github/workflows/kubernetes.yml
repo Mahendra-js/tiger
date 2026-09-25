@@ -8,24 +8,17 @@ on:
 jobs:
   deploy:
 
-    runs-on:
-      - self-hosted
-      - minikube
-
+    runs-on: self-hosted
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v6
-
       - name: Check Minikube Status
         run: |
           minikube status
           kubectl get nodes
-
       - name: Show Current Kubernetes Context
         run: |
           kubectl config current-context
-
       - name: Deploy Application
         run: |
           kubectl apply -f k8s/deployment.yaml
