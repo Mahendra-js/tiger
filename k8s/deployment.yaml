@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deploy-mass
-  type: mass
 spec:
   template:
     metadata:
       type: mass
-    containers:
-    - name: app
-      image: mahijs/dell-app:latest
-      ports:
-      - containerPort: 80
+    spec:
+      containers:
+      - name: app
+        image: mahijs/dell-app:latest
+        ports:
+        - containerPort: 80
   replicas: 3
   selector:
     matchLabels:
