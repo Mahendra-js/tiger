@@ -26,7 +26,7 @@ jobs:
 
       - name: Wait for Deployment
         run: |
-          kubectl rollout status deployment/my-app --timeout=120s
+          kubectl rollout status deployment/massmutual-deployment --timeout=120s
 
       - name: Verify Deployment
         run: |
